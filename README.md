@@ -11,6 +11,16 @@ npm run dev
 
 Use `npm run build` for a production build, `npm run lint` to run Oxlint, and `npm test` to run the CVSS unit tests.
 
+## Run with Docker
+
+Build and start the production container:
+
+```sh
+docker compose up --build -d
+```
+
+Open <http://127.0.0.1:8080>. The container runs as an unprivileged Nginx user, serves the Vite build with SPA fallback, and binds only to localhost. Stop it with `docker compose down`.
+
 ## Architecture
 
 - `src/data/mockData.ts` contains the typed repository, vulnerability, and trend fixtures.
