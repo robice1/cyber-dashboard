@@ -1,0 +1,77 @@
+:root {
+  font-family: "Bahnschrift", "Segoe UI Variable", "Segoe UI", sans-serif;
+  color: #dce5df;
+  background: #0b1012;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --bg: #0b1012;
+  --line: #293436;
+  --text-strong: #dce5df;
+  --text-muted: #9aa6a2;
+  --text-dim: #72817c;
+  --mint: #67d7ad;
+  --coral: #ff8068;
+  --mono: "Cascadia Code", "Consolas", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scrollbar-color: #344144 #0e1416;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 75% -15%, rgba(45, 117, 94, 0.14), transparent 39%),
+    repeating-linear-gradient(0deg, transparent 0, transparent 43px, rgba(169, 204, 190, 0.012) 44px),
+    #0b1012;
+}
+
+body,
+button,
+input,
+select {
+  font-family: "Bahnschrift", "Segoe UI Variable", "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select {
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #73d9b3;
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  color: #07110d;
+  background: #78d9b2;
+}
