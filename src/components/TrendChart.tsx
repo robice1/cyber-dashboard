@@ -7,7 +7,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import type { TrendPoint } from '../data/mockData'
+import type { TrendPoint } from '../data/models'
 
 function TrendChart({ data }: { data: TrendPoint[] }) {
   return (

@@ -416,6 +416,29 @@
   white-space: nowrap;
 }
 
+.date-select-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.date-select-label .date-button {
+  appearance: none;
+  padding-right: 30px;
+}
+
+.date-select-label > svg {
+  position: absolute;
+  right: 9px;
+  color: #82908e;
+  pointer-events: none;
+}
+
+.date-select-label .date-button option {
+  color: #dbe3de;
+  background: #182022;
+}
+
 .date-button svg,
 .quiet-button svg {
   color: #82908e;
@@ -640,6 +663,10 @@
   color: #667473;
   font-family: var(--mono);
   font-size: 8px;
+}
+
+.chart-interval {
+  cursor: default;
 }
 
 .trend-chart {
@@ -890,7 +917,8 @@
 }
 
 .search-field,
-.repository-select {
+.repository-select,
+.scanner-select {
   display: flex;
   height: 29px;
   align-items: center;
@@ -904,6 +932,7 @@
 
 .search-field {
   width: 173px;
+  flex: 1 1 170px;
 }
 
 .search-field input {
@@ -946,13 +975,15 @@
   background: transparent;
 }
 
-.repository-select {
+.repository-select,
+.scanner-select {
   position: relative;
   gap: 5px;
   padding: 0 7px;
 }
 
-.repository-select select {
+.repository-select select,
+.scanner-select select {
   max-width: 113px;
   appearance: none;
   padding: 0 10px 0 0;
@@ -963,12 +994,14 @@
   font-size: 9px;
 }
 
-.repository-select select option {
+.repository-select select option,
+.scanner-select select option {
   color: #dbe3de;
   background: #182022;
 }
 
-.repository-select > svg:last-child {
+.repository-select > svg:last-child,
+.scanner-select > svg:last-child {
   position: absolute;
   right: 7px;
   pointer-events: none;
@@ -1026,7 +1059,7 @@
 
 .vulnerability-table {
   width: 100%;
-  min-width: 790px;
+  min-width: 1140px;
   border-collapse: collapse;
   text-align: left;
 }
@@ -1122,6 +1155,55 @@
   gap: 5px;
   color: #b5c0bb;
   font-size: 9px;
+}
+
+.scanner-badge {
+  display: inline-flex;
+  max-width: 120px;
+  align-items: center;
+  overflow: hidden;
+  padding: 4px 6px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scanner-badge.codeql {
+  border-color: rgba(105, 211, 172, 0.16);
+  color: #9ad9bb;
+  background: rgba(74, 161, 127, 0.1);
+}
+
+.scanner-badge.dependabot {
+  border-color: rgba(124, 164, 224, 0.16);
+  color: #a9c9f3;
+  background: rgba(93, 131, 184, 0.1);
+}
+
+.scanner-badge.secret-scanning {
+  border-color: rgba(225, 132, 133, 0.16);
+  color: #e7a3a3;
+  background: rgba(161, 91, 94, 0.1);
+}
+
+.scanner-badge.dast {
+  border-color: rgba(227, 185, 109, 0.16);
+  color: #e7c47e;
+  background: rgba(168, 131, 62, 0.1);
+}
+
+.scanner-badge.container-scanning {
+  border-color: rgba(171, 153, 218, 0.16);
+  color: #c4b7e8;
+  background: rgba(121, 103, 168, 0.1);
+}
+
+.cwe-cell {
+  color: #9baaa3;
+  font-family: var(--mono);
+  font-size: 8px;
 }
 
 .repo-mark {
@@ -1783,11 +1865,13 @@
     width: auto;
   }
 
-  .repository-select {
+  .repository-select,
+  .scanner-select {
     max-width: 46%;
   }
 
-  .repository-select select {
+  .repository-select select,
+  .scanner-select select {
     max-width: 100px;
   }
 
